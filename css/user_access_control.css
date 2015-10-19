@@ -1,0 +1,86 @@
+div.user_access_control_body {
+    display: flex;
+}
+
+/*Left Side*/
+div.left_body {
+	width: 50%;
+}
+div.left_body li {
+	margin-top: 50px;
+}
+div.signup_div {
+	width: 97%;
+	margin-top: 15px;
+}
+input.signup_input {
+    width: 160px;
+    margin-bottom: 10px;
+    height: 30px;
+    padding-left: 5px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CACACA;
+}
+input.user_access_control_submit {
+    height: 30px;
+    width: 90px;
+    float: left;
+    margin-left: 79px;
+    background-color: #4E9EC1;;
+    border-style: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+input.user_access_control_submit:hover {
+	cursor: pointer;
+	background-color: #796FCE;
+}
+img.loading_img {
+	position: relative;
+    top: 6px;
+    left: 5px;
+}
+p#form_error_msg {
+	color: red;
+}
+
+/*Right Side*/
+div.right_body {
+	width: 50%;
+    border-left-color: #C5C5C5;
+    border-left-style: solid;
+    border-left-width: 1px;
+    height: 500px;
+    padding-left: 10px;
+}
+
+div.user_table {
+	text-align: center;
+}
+div.user_table th {
+	border-bottom: 1px solid gray;
+	padding: 0px 3px 0px 3px;
+}
+
+div.user_table tr {
+    font-family: monospace;
+}
+div.user_table td {
+	padding: 0px 3px 0px 3px;	
+}
+
+span.success_msg {
+	color : #2FA533;
+}
+span.error_msg {
+	color: red;
+}
+div.explanation {
+	padding: 25px 10px 10px 10px;
+}
+
+}
