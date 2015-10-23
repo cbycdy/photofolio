@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</br>Username and Email input are checking if there is a duplicate in db by <b>AJAX</b>.
 			</br>Password is checked by <b>Javascript validation function</b> to make sure that the user have a strong password.
 			</br>Passwords are stored in <b>salted hash-string</b> which is very secure from lots of cracking password tricks such as <a target="_blank" href='https://en.wikipedia.org/wiki/Rainbow_table'>rainbow table</a>.
-			</br>You may check more details in <code>TODO: CODE LINK</code></p>
+			</br>You may check more details from : <code><a target='_blank' href='https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php'>https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php</a></code></p>
 		</div>
 	</div>
 </div>

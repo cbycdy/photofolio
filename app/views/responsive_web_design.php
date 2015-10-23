@@ -80,7 +80,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <div class='top_banner'>
-	<img class='top_banner_img' src='<?=base_url()?>images/top_banner.jpg'>
+	<img class='top_banner_img' id='top_banner_img1' src='<?=base_url()?>images/top_banner.jpg'>
+	<img class='top_banner_img' id='top_banner_img2' src='<?=base_url()?>images/top_banner2.jpg'>
 </div>
 <div class='contents_container1'>
 	<div class='card_container'>
@@ -107,57 +108,71 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
+<div class="contents_container2">
+	<div class='bottom_banner parallax_img'>
+		<div>I would put Something here!</div>
+	</div>
+</div>
+<div class="contents_container3">
+	<div class="bottom_banner parallax_img2">
+		<div><span>And definately here, too!</span></div>
+	</div>
+</div>
+
 <div class="responsive_footer">
+	<div class='responsive_footer_section'>&nbsp;
+	</div>
 	<div class='responsive_footer_section'>
 		<ul>
-			<li class='footer_section_header'>Section1</li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
+			<li class='footer_section_header'>Footer Links</li>
+			<li class='fotter_section_item'><a href='#'>Lorem Ipsum</a></li>
+			<li class='fotter_section_item'><a href='#'>Dolor Sit Amet</a></li>
+			<li class='fotter_section_item'><a href='#'>Consectetur</a></li>
+			<li class='fotter_section_item'><a href='#'>Adipiscing</a></li>
+			<li class='fotter_section_item'><a href='#'>Etiam At</a></li>
+			<li class='fotter_section_item'><a href='#'>Tortor Id</a></li>
 		</ul>
 		<ul>
-			<li class='footer_section_header'>Section2</li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
+			<li class='footer_section_header'>Footer Links</li>
+			<li class='fotter_section_item'><a href='#'>Quam pharetra</a></li>
+			<li class='fotter_section_item'><a href='#'>Sed Quis</a></li>
+			<li class='fotter_section_item'><a href='#'>Interdum Et Ma</a></li>
 		</ul>
 	</div>
 	<div class='responsive_footer_section'>
 		<ul>
-			<li class='footer_section_header'>Section3</li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
+			<li class='footer_section_header'>Footer Links</li>
+			<li class='fotter_section_item'><a href='#'>Maecenas Et
+			<li class='fotter_section_item'><a href='#'>Nibh Fringilla</a></li>
+			<li class='fotter_section_item'><a href='#'>Gravida Mauris</a></li>
+			<li class='fotter_section_item'><a href='#'>Sit Amet</a></li>
+			<li class='fotter_section_item'><a href='#'>Auctor Sapien</a></li>
 		</ul>
 		<ul>
-			<li class='footer_section_header'>Section4</li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
+			<li class='footer_section_header'>Footer Links</li>
+			<li class='fotter_section_item'><a href='#'>Morbi</a></li>
+			<li class='fotter_section_item'><a href='#'>Vel Erat</a></li>
+			<li class='fotter_section_item'><a href='#'>Enim</a></li>
+			<li class='fotter_section_item'><a href='#'>Egestas</a></li>
+			<li class='fotter_section_item'><a href='#'>Finibus</a></li>
+			<li class='fotter_section_item'><a href='#'>Cras Non</a></li>
 		</ul>
 	</div>
 	<div class='responsive_footer_section'>
 		<ul>
-			<li class='footer_section_header'>Section5</li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
-			<li class='fotter_section_item'><a href='#'>contents</a></li>
+			<li class='footer_section_header'>Footer Links</li>
+			<li class='fotter_section_item'><a href='#'>Euismod</a></li>
+			<li class='fotter_section_item'><a href='#'>Sed Euismod</a></li>
+			<li class='fotter_section_item'><a href='#'>Ullamcorper</a></li>
+			<li class='fotter_section_item'><a href='#'>Interdum Nibh</a></li>
+			<li class='fotter_section_item'><a href='#'>Vulputate</a></li>
+			<li class='fotter_section_item'><a href='#'>Tristique</a></li>
+			<li class='fotter_section_item'><a href='#'>Mauris</a></li>
+			<li class='fotter_section_item'><a href='#'>Lacus Urna</a></li>
+			<li class='fotter_section_item'><a href='#'>Vehicula</a></li>
 		</ul>
 	</div>
+	<div class='copyright'>Copyright © 2015 Sean Web. All rights reserved.</div>
 </div>
 
 <script type="text/javascript">
