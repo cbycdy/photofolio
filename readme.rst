@@ -1,5 +1,5 @@
 ###################
-What is CodeIgniter
+Sean Seungwoo Choi's Photo Folio
 ###################
 
 CodeIgniter is an Application Development Framework - a toolkit - for people
