@@ -42,11 +42,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h4>MVC example.</h4>
 				<p>"User Access Control" from above as an example, following links are representing how CodeIgniter works in MVC pattern.</p>
 				<code>
-					<a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/models/user.php'>User Model</a>
-					<br><a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/controllers/user_access_control.php'>User Access Control Controller</a>
-					<br><a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/header.php'>Header View</a>
-					<br><a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/user_access_control.php'>User Access Control View</a>
-					<br><a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/footer.php'>Footer View</a>
+					Model - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/models/user.php'>User</a>
+					<br>Controller - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/controllers/user_access_control.php'>User Access Control</a>
+					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/header.php'>Header</a>
+					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/user_access_control.php'>User Access Control</a>
+					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/footer.php'>Footer</a>
 				</code>
 			</li>
 			<li>
