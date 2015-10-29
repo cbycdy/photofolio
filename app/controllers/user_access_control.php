@@ -12,12 +12,17 @@ class User_access_control extends CI_Controller {
 		$data['signup_msg'] = '';
 		$data['signin_msg'] = '';
 
+		//Post handling
 		if ($post)
 		{
+			//Signup case:
 			if($post['from_type'] === 'signup')
 			{
+				//Double-check duplicate of username and email.
 				$user1 = $this->user->get_user_by_username($post['username']);
 				$user2 = $this->user->get_user_by_email($post['email']);
+
+				//It's clean, insert new user from post data.
 				if(!$user1 && !$user2)
 				{
 					$user_data['firstname'] = $post['firstname'];	
@@ -28,36 +33,42 @@ class User_access_control extends CI_Controller {
 					$this->db->insert('user', $user_data);
 					$this->session->set_message('post_msg', 'Successfuly signed up.', 'success');	
 				}
+				//There is a duplicate.
 				else
 				{
 					$this->session->set_message('post_msg', 'Username or Email is already used.', 'error');	
 					$data['signup_msg'] = 'Username or Email is already used.';
 				}
 			}
+			//Signin case:
 			else if($post['from_type'] === 'signin')
 			{
+				//Try signin with given username and password by calling signin function in user model.
 				$user = $this->user->signin($post['username'],$post['password']);
 				
 				if($user)
 				{
+					//Two ways to display result message.
 					$this->session->set_message('post_msg', 'Welcome, '.$user['firstname'], 'success');	
-					$data['user'] = $user;
+					$data['signin_msg'] = "<p id='form_success_msg'>Welcome, " . $user['firstname'];
 				}
 				else
 				{
 					$this->session->set_message('post_msg', 'Incorrect username or password.', 'error');	
-					$data['signin_msg'] = 'Incorrect username or password.';
+					$data['signin_msg'] = "<p id='form_error_msg'>Incorrect username or password.</p>";
 				}
 			}
 		}
 				
-		
+		//Get user list from user model.
 		$data['users'] = $this->user->get_users();
 
+		//Rendering user page.
 		$this->load->view('header');
 		$this->load->view('user_access_control', $data);
 		$this->load->view('footer');
 	}
+
 	public function username_check_ajax()
 	{		
 		$success_msg = "<span class='success_msg'>Available username!</span>";
@@ -69,7 +80,7 @@ class User_access_control extends CI_Controller {
 
 		$post = $this->input->post();
 
-		//error case
+		//error case:
 		if(!preg_match('/^[A-Za-z][A-Za-z0-9]{3,12}$/', $post['username']))
 		{
 			$msg = $bad_username_msg;
@@ -79,7 +90,7 @@ class User_access_control extends CI_Controller {
 			return;
 		}
 
-		//check if the username is already used
+		//check if the username is already used.
 		$this->load->model('user');
 		$user = $this->user->get_user_by_username($post['username']);
 
@@ -93,6 +104,7 @@ class User_access_control extends CI_Controller {
 		
 		echo json_encode($data);
 	}
+
 	public function email_check_ajax()
 	{		
 		$success_msg = "";
@@ -104,7 +116,7 @@ class User_access_control extends CI_Controller {
 
 		$post = $this->input->post();
 
-		//check if the email is already used
+		//check if the email is already used.
 		$this->load->model('user');
 		$user = $this->user->get_user_by_email($post['email']);
 

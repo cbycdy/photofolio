@@ -8,6 +8,18 @@ class User extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
+    /*
+    * Form validation:
+    *
+    * @Author: Sean Seungwoo Choi
+    * 
+    *  username requires only letters and numbers. (!@#$%^&*() kinds special character is not allowd)
+    *  password requires at least one number, lowecase letter, uppercase letter, and at least 6 long.
+    * 
+    * See the details from error message.
+    *
+    *  "required" attribute won't wonk with Safari nor IE. 
+    */  
     function get_users()
     {
         $query = $this->db->select('id, firstname, lastname, username, password, email')->get('user');

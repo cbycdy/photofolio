@@ -8,12 +8,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class='user_access_control_body'>
 			<div class="left_body">
 				<ul>
-					<!-- Sign up -->
+					<!-- Sign in -->
 					<li style="margin: auto;">
 						<strong>Sign in</strong>
 						<div class='signup_div'>
 							<form class='signup_form' method='post' action='<?=base_url()?>user_access_control'>
-								<p id='form_error_msg'><?=$signin_msg?></p>
+								<?=$signin_msg?>
 								<div><input class='signup_input' id='username' placeholder='Username' name='username' type='text' required></div>
 								<div><input class='signup_input' placeholder='Password' name='password' type='password' required></div>
 								<input type='hidden' name='from_type' value='signin'>
@@ -21,35 +21,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</form>
 						</div>
 					</li>
+					<!-- Sign up -->
 					<li>
 						<strong>Sign up</strong>
-							<div class='signup_div'>
-								<form class='signup_form' method='post' action='<?=base_url()?>user_access_control' onsubmit="return validateRegister(this)">
-									<p id='form_error_msg'><?=$signup_msg?></p>
-									<div><input class='signup_input' placeholder='First Name' name='firstname' type='text' required></div>
-									<div><input class='signup_input' placeholder='Last Name' name='lastname' type='text' required></div>
-									<div>
-										<input class='signup_input' id='username_input' placeholder='Username' name='username' type='text' required>
-										<span><img class='loading_img' src='<?=base_url()?>images/loading.gif'></span>
-										<span id='username_check_msg'></span>
-									</div>
-									<div><input class='signup_input' placeholder='Password' name='password' type='password' required></div>
-									<div><input class='signup_input' placeholder='Re-enter Password' name='password_confirm' type='password' required></div>
-									<div>
-										<input class='signup_input' id='email_input' placeholder='Email' name='email' type='email' required>
-										<span><img class='loading_img' id='emailcheck_loading_img' src='<?=base_url()?>images/loading.gif'></span>
-										<span id='email_check_msg'></span>
-									</div>
-									<input type='hidden' name='from_type' value='signup'>
-									<input class='user_access_control_submit' type='submit'>
-								</form>
-							</div>
+						<div class='signup_div'>
+							<form class='signup_form' method='post' action='<?=base_url()?>user_access_control' onsubmit="return validateRegister(this)">
+								<p id='form_error_msg'><?=$signup_msg?></p>
+								<div><input class='signup_input' placeholder='First Name' name='firstname' type='text' required></div>
+								<div><input class='signup_input' placeholder='Last Name' name='lastname' type='text' required></div>
+								<div>
+									<input class='signup_input' id='username_input' placeholder='Username' name='username' type='text' required>
+									<span><img class='loading_img' src='<?=base_url()?>images/loading.gif'></span>
+									<span id='username_check_msg'></span>
+								</div>
+								<div><input class='signup_input' placeholder='Password' name='password' type='password' required></div>
+								<div><input class='signup_input' placeholder='Re-enter Password' name='password_confirm' type='password' required></div>
+								<div>
+									<input class='signup_input' id='email_input' placeholder='Email' name='email' type='email' required>
+									<span><img class='loading_img' id='emailcheck_loading_img' src='<?=base_url()?>images/loading.gif'></span>
+									<span id='email_check_msg'></span>
+								</div>
+								<input type='hidden' name='from_type' value='signup'>
+								<input class='user_access_control_submit' type='submit'>
+							</form>
+						</div>
 					</li>
 				</ul>
 			</div>
+			<!-- User Table from Database -->
 			<div class="right_body">
 			<strong>User table in database</strong>
-			</br></br>
+			<br><br>
 				<div class='user_table'>
 				<table>
 					<? foreach ($users as $key => $value)
@@ -66,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						foreach ($value as $field_name => $field)
 						{
 							echo "<td>";
+							//Password is too long to display. Just display the first 12 characters.
 							if($field_name === 'password')
 								echo substr($field, 0, 12) . '..';
 							else
@@ -77,15 +80,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						echo '</tr>';
 					}?>
 				</table>
-				</div> <!-- user_table -->
+				</div> <!-- user_table div-->
 			</div> <!-- right_body -->
 		</div>
 		<div class='explanation'>
-			<p><u>Simple Sign-Up / Sign-In functionality.</u>
-			</br>Username and Email input are checking if there is a duplicate in db by <b>AJAX</b>.
-			</br>Password is checked by <b>Javascript validation function</b> to make sure that the user have a strong password.
-			</br>Passwords are stored in <b>salted hash-string</b> which is very secure from lots of cracking password tricks such as <a target="_blank" href='https://en.wikipedia.org/wiki/Rainbow_table'>rainbow table</a>.
-			</br>You may check more details from : <code><a target='_blank' href='https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php'>https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php</a></code></p>
+			<p><u>Simple Sign-Up / Sign-In functionalities.</u>
+			<br>Username and Email input are checking if there is a duplicate in db by <b>AJAX</b>.
+			<br>Password is checked by <b>Javascript validation function</b> to make sure that the user have a strong password.
+			<br>Passwords are stored in <b>salted hash-string</b> which is very secure from lots of cracking password tricks such as <a target="_blank" href='https://en.wikipedia.org/wiki/Rainbow_table'>rainbow table</a>.
+			<br>You may check more details from : <code><a target='_blank' href='https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php'>https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php</a></code></p>
 		</div>
 	</div>
 </div>

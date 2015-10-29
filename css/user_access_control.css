@@ -47,6 +47,9 @@ img.loading_img {
 p#form_error_msg {
 	color: red;
 }
+p#form_success_msg {
+    color: #1251D0;  
+}
 
 /*Right Side*/
 div.right_body {
