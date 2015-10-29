@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>User Access Control</h1>
 	<div id="body">
-	<p><a href='<?=base_url()?>'>Back To Main</a></p>
 		<div class='user_access_control_body'>
 			<div class="left_body">
 				<ul>
