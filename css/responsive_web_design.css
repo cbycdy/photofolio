@@ -275,6 +275,7 @@ li.footer_section_header {
         margin: 0;
         background-color: rgba(255, 255, 255, 0.9);
         font-size: 45px;
+        z-index: 999;
     }
     @media screen and (max-width: 540px) {    
         ul.mobile_menu {
