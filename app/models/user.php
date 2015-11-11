@@ -104,4 +104,86 @@ class User extends CI_Model {
         return NULL;
     }
 
+    /**
+    *
+    *   Update a user from user table by given id and data array.
+    *
+    *   @since  10-25-2015  
+    *   @author Sean Seungwoo Choi
+    *   @access public
+    *   @param id, data array
+    *   @return a user iobject array
+    *
+    */
+    function update($id = NULL, $data = NULL)
+    {
+        if($id === NULL)
+            return NULL;
+        
+        if($data === NULL)
+            return NULL;
+
+        $this->db->where('id', $id)->update('user', $data);
+        
+        $query = $this->db->where('id', $id)->get('user');
+        $user = $query->result_array();
+
+        return $user;
+    }
+
+    /**
+    *
+    *   Create a user from user table by given id and data array.
+    *
+    *   @since  10-25-2015  
+    *   @author Sean Seungwoo Choi
+    *   @access public
+    *   @param data array
+    *   @return a user object array
+    *
+    */
+    function create($data = NULL)
+    {
+        if($data === NULL)
+            return NULL;
+
+        //Double-check duplicate of username and email.
+        $user1 = $this->user->get_user_by_username($data['username']);
+        $user2 = $this->user->get_user_by_email($data['email']);
+
+        //It's clean, insert new user from post data.
+        if(!$user1 && !$user2)
+        {
+            $this->db->insert('user', $data);
+
+            $query = $this->db->order_by('id', 'desc')->limit(1)->get('user');
+            $user = $query->result_array();
+
+            return $user;
+        }
+
+        return NULL;
+    }
+
+    /**
+    *
+    *   Delete a user from user table by given id and data array.
+    *
+    *   @since  10-25-2015  
+    *   @author Sean Seungwoo Choi
+    *   @access public
+    *   @param data array
+    *   @return deleted user id.
+    *
+    */
+    function delete($id = NULL)
+    {
+        if($id === NULL)
+            return NULL;
+
+        $this->db->where('id', $id)->delete('user');
+
+        return $id;
+    }
+
 }

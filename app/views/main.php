@@ -2,20 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div id="container">
-	<h1>Sean Seungwoo Choi</h1>
+<div class='img_box'><img id='face_picture' src='<?=base_url('images/seungwoo.png')?>'></div>
 
+<div id="container">	
+	<h1>Sean Seungwoo Choi - <a target='_blank' href='<?=base_url('files/Seunwoo_Choi_Resume.pdf')?>'>Resume</a></h1>
 	<div id="body">
 		<h3>Welcome to Sean's photofolio page.</h3>
 		<p>This page is built in php with CodeIgniter Version <?=CI_VERSION?> to demonstrate my skill set as <strong><u>Full-stack developer</u></strong>.</p>
 		<ul>
 			<li>
-				<h3>Server Hosting: </h3>
+				<h3>Web Hosting (Private Apache Server): </h3>
 				<p>This page is not hosted by typical web hosting service such as godaddy.com, bluehost.com, etc. but hosted by Sean's server in his home.
 				<br>Therefore, this page is working only while his server (home computer) and ISP (Xfinity) are on.</p>
 			</li>
 			<li>
-				<h3>Web Development, Front End (Client Side): </h3>
+				<h3>Front End (Client Side Web Development): </h3>
 				<p>I put a simple example of responsive web design that is created by HTML5 and CSS3.
 				<br>The example is using only limited number of JavaScript funciton (with Jquery) that is for mobile menu's mouse event.</p>
 				<p>Some programers think JavaScript is better in performance; however most programers agree on writing CSS is simpler.
@@ -25,12 +26,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<br>CSS => Styles
 					<br>JS => Logic
 				</code>
-				Here is the example and it is also included some parallax scrolling that is made by pure CSS3 (No javascript needed for this simple thing.)</p>
-				<code><a  target='_blank' href='<?=base_url()?>responsive_web_design'>Responsive Web Design</a></code>
+				Here is an example of <strong>Front-End page</strong> that is also included some parallax scrolling that is made by pure CSS3 (No javascript needed for this simple thing.)</p>
+				<code><a  target='_blank' href='<?=base_url('responsive_web_design')?>'><img src='<?=base_url('images/responsive_screenshot.jpg')?>'><br>Responsive Web Design</a></code>
 			</li>
 			<li>
-				<h3>Web Development, Back End (Server Side): </h3>
-				<code><a  target='_blank' href='<?=base_url()?>user_access_control'>User Access Control (SignIn, SignUp, AJAX, etc.)</a></code>
+				<h3>Back End (Server Side Web Development): </h3>
+				<p>In general, the back-end development is including any parts of the application that would not be visible to the user.
+				<br>In web development, it usually indicates any code running in server side.
+				<br>User Access Control is one of good example to demonstrate some basic tricks of back-end programing. Because when a user sign-in or sign-up, the client have to post user's data such as username and password to server so it can be handled properly with the database.
+				</p>
+				<p>Here is an example of User Access Control and the relevant user table in database:</p>
+				<code><a  target='_blank' href='<?=base_url('user_access_control')?>'><img src='<?=base_url('images/user_access_screenshot.jpg')?>'><br>User Access Control (SignIn, SignUp, AJAX, etc.)</a></code>
 			</li>
 			<li>
 				<h3>Model–view–controller (MVC): </h3>
@@ -47,6 +53,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/header.php'>Header</a>
 					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/user_access_control.php'>User Access Control</a>
 					<br>View - <a target='_blank' href='https://github.com/cbycdy/photofolio/tree/master/app/views/footer.php'>Footer</a>
+				</code>
+			</li>
+			<li>
+				<h3>RESTful Web service (API): </h3>
+				<h4>What is REST?</h4>
+				<code>
+					<a target='_blank' href='https://en.wikipedia.org/wiki/Representational_state_transfer'>RESTful Service - Wiki</a>
+					<br><a target='_blank' href='http://spf13.com/post/soap-vs-rest'>Soap vs Rest - Blog</a>
+				</code>
+				<h4>RESTful Service built in this photofolio:</h4>
+				<code>
+					<a target='_blank' href='<?=base_url('rest_server')?>'><img src='<?=base_url('images/rest_server_screnshot.jpg')?>'><br>RESTful Server Tests</a>
+				</code>
+			</li>
+			<li>
+				<h3>Relational Database (SQL): </h3>
+				<p>I have done some projects those requires to design, model, structure, optimize, and index database.</p>
+				<h4>MyStuff Project</h4>
+				<p>MyStuff is a yearlong core business system project in college. As part of project, it is required to design and model a database structure for entire business system.
+				<br>Following links may help you to understand what the project looks like. </p>
+				<code>
+					<a target="_blank" href='<?=base_url('files/MyStuff_Case_Description.pdf')?>'>Case Description </a>
+					<br><a target="_blank" href='<?=base_url('files/datamodel.pdf')?>'>Database Modeling</a>
+					<br><a target="_blank" href='<?=base_url('files/RelationalDataModel.pdf')?>'>Relational Database Model</a>
+					<br>
+					<br>Report - <a target="_blank" href='<?=base_url('files/MYSTUFF-High.pdf')?>'>High Quality</a> <a target="_blank" href='<?=base_url('files/MYSTUFF-low.pdf')?>'>Low Quality</a>
+					<br>Presentation - <a target="_blank" href='<?=base_url('files/MyStuff-ppt.pptx')?>'>pptx</a> <a target="_blank" href='<?=base_url('files/MyStuff-ppt.pdf')?>'>pdf</a>
 				</code>
 			</li>
 			<li>
@@ -75,12 +108,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</code>
 				<p>This photofolio however, has a public repository at GitHub to demonstrate how the code looks like.
 				<br>Here is the public repository:</p>
-				<code><a target='_blank' href='http://github.com/cbycdy/photofolio'>Github Public Repository</a></code>
+				<code><a target='_blank' href='http://github.com/cbycdy/photofolio'><img src='<?=base_url('images/github_screenshot.jpg')?>'><br>Github Public Repository</a></code>
 				<p>I won't explain more details here how Git helps for version control and handling conflicts in team project.
 				<br>If you want to learn more about version control, try follow links:</p>
 				<code>
-					<a href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Git - About Version Control</a>
-					<br><a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging</a>
+					Git - <a href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">About Version Control</a>
+					<br>Git Branching - <a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Basic Branching and Merging</a>
 				</code>
 			</li>
 		</ul>

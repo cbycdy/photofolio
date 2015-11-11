@@ -18,26 +18,26 @@ class User_access_control extends CI_Controller {
 			//Signup case:
 			if($post['from_type'] === 'signup')
 			{
-				//Double-check duplicate of username and email.
-				$user1 = $this->user->get_user_by_username($post['username']);
-				$user2 = $this->user->get_user_by_email($post['email']);
+				
+				$user_data['firstname'] = $post['firstname'];	
+				$user_data['lastname'] = $post['lastname'];	
+				$user_data['username'] = $post['username'];	
+				$user_data['password'] = password_hash($post['password'], PASSWORD_BCRYPT);	
+				$user_data['email'] = $post['email'];
 
-				//It's clean, insert new user from post data.
-				if(!$user1 && !$user2)
+				$this->user->create($user_data);
+				
+				//success
+				if($user)
 				{
-					$user_data['firstname'] = $post['firstname'];	
-					$user_data['lastname'] = $post['lastname'];	
-					$user_data['username'] = $post['username'];	
-					$user_data['password'] = password_hash($post['password'], PASSWORD_BCRYPT);	
-					$user_data['email'] = $post['email'];
-					$this->db->insert('user', $user_data);
 					$this->session->set_message('post_msg', 'Successfuly signed up.', 'success');	
 				}
-				//There is a duplicate.
+
+				//There is an error.
 				else
 				{
-					$this->session->set_message('post_msg', 'Username or Email is already used.', 'error');	
-					$data['signup_msg'] = 'Username or Email is already used.';
+					$this->session->set_message('post_msg', 'Invalid post or Username / Email is already used.', 'error');	
+					$data['signup_msg'] = 'Invalid post or Username / Email is already used.';
 				}
 			}
 			//Signin case:
@@ -62,7 +62,7 @@ class User_access_control extends CI_Controller {
 				
 		//Get user list from user model.
 		$data['users'] = $this->user->get_users();
-
+		
 		//Rendering user page.
 		$this->load->view('header');
 		$this->load->view('user_access_control', $data);

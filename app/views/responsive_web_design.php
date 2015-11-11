@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<link rel="stylesheet" type="text/css" href='<?=base_url()?>css/responsive_web_design.css'>
+<link rel="stylesheet" type="text/css" href='<?=base_url('css/responsive_web_design.css')?>'>
 
 <div class='responsive_header'>
 	<div class='responsive_nav'>
-		<div class='responsive_logo'><a href='<?=base_url()?>'><img class='logo' src='<?=base_url()?>images/logo.png'></a></div>
+		<div class='responsive_logo'><a href='<?=base_url()?>'><img class='logo' src='<?=base_url('images/logo.png')?>'></a></div>
 		<ul class="responsive_menu">
 			<li class="responsive_menu_item">
 				Menu 1
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</li>
 		</ul>
 		<div class='mobile_menu_container'>
-			<img class='mobile_icon' src='<?=base_url()?>images/nav-icon.png'>
+			<img class='mobile_icon' src='<?=base_url('images/nav-icon.png')?>'>
 			<ul class="mobile_menu">
 				<li class="mobile_menu_item" onclick="mobile_menu_clicked(1)">
 					Menu 1
@@ -80,8 +80,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <div class='top_banner'>
-	<img class='top_banner_img' id='top_banner_img1' src='<?=base_url()?>images/top_banner.jpg'>
-	<img class='top_banner_img' id='top_banner_img2' src='<?=base_url()?>images/top_banner2.jpg'>
+	<img class='top_banner_img' id='top_banner_img1' src='<?=base_url('images/top_banner.jpg')?>'>
+	<img class='top_banner_img' id='top_banner_img2' src='<?=base_url('images/top_banner2.jpg')?>'>
 </div>
 <div class='contents_container1'>
 	<div class='card_container'>
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<div class="image_container">
 		<div class="img_card">
-			<img src="<?=base_url()?>images/content_img1.jpg">
+			<img src="<?=base_url('images/content_img1.jpg')?>">
 			<div class="img_card_content">
 				<h2>Donec laoreet</h2>
 				<p>Massa ut iaculis vulputate, enim justo ullamcorper augue, et interdum nibh felis at augue. In iaculis maximus lectus vitae rhoncus. Nam ullamcorper pretium consequat. Integer malesuada vestibulum lectus sed elementum. Donec commodo non tellus id iaculis. Vestibulum nisl orci, rhoncus eu euismod ut, varius in nisl. Nulla dictum ex ac turpis aliquam, eget laoreet diam semper.</p>

@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div>
-<img src='<?=base_url()?>images/error/404.png' style='width:100%;'>
+<img src='<?=base_url('images/error/404.png')?>' style='width:100%;'>
 </div>
 
 </body>

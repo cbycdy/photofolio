@@ -1,0 +1,11 @@
+code {
+	color: #101010;
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+.add_code {
+	color: green;
+}
+.delete_code {
+	color: red;
+}

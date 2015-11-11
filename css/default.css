@@ -13,6 +13,10 @@ a {
 	color: #003399;
 	background-color: transparent;
 	font-weight: normal;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
 
 h1 {
@@ -30,10 +34,20 @@ code {
 	font-size: 12px;
 	background-color: #f9f9f9;
 	border: 1px solid #D0D0D0;
-	color: #002166;
+	color: #673232;
 	display: block;
 	margin: 14px 0 14px 0;
 	padding: 12px 10px 12px 10px;
+}
+pre code {
+	margin: 0;
+	padding: 0;
+}
+
+code a img {
+	width: 180px;
+	box-shadow: 0 3px 12px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	margin-bottom: 5px;
 }
 
 #body {
@@ -61,5 +75,20 @@ div.footer p {
 }
 img.loading_img {
 	width: 20px;
+	display: none;
+}
+li h3 {
+	color: #DE4242;
+}
+code a {
+	font-size: 1.2em;
+}
+h1 a {
+	font-size: 0.9em;
+}
+#face_picture {
+	position: absolute;
+	left: 5%;
+	top: 5%;
 	display: none;
 }

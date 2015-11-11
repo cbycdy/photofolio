@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<link rel="stylesheet" type="text/css" href='<?=base_url()?>css/user_access_control.css'>
+<link rel="stylesheet" type="text/css" href='<?=base_url('css/user_access_control.css')?>'>
 <div id="container">
 	<h1>User Access Control</h1>
 	<div id="body">
@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<li style="margin: auto;">
 						<strong>Sign in</strong>
 						<div class='signup_div'>
-							<form class='signup_form' method='post' action='<?=base_url()?>user_access_control'>
+							<form class='signup_form' method='post' action='<?=base_url('user_access_control')?>'>
 								<?=$signin_msg?>
 								<div><input class='signup_input' id='username' placeholder='Username' name='username' type='text' required></div>
 								<div><input class='signup_input' placeholder='Password' name='password' type='password' required></div>
@@ -25,20 +25,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<li>
 						<strong>Sign up</strong>
 						<div class='signup_div'>
-							<form class='signup_form' method='post' action='<?=base_url()?>user_access_control' onsubmit="return validateRegister(this)">
+							<form class='signup_form' method='post' action='<?=base_url('user_access_control')?>' onsubmit="return validateRegister(this)">
 								<p id='form_error_msg'><?=$signup_msg?></p>
 								<div><input class='signup_input' placeholder='First Name' name='firstname' type='text' required></div>
 								<div><input class='signup_input' placeholder='Last Name' name='lastname' type='text' required></div>
 								<div>
 									<input class='signup_input' id='username_input' placeholder='Username' name='username' type='text' required>
-									<span><img class='loading_img' src='<?=base_url()?>images/loading.gif'></span>
+									<span><img class='loading_img' src='<?=base_url('images/loading.gif')?>'></span>
 									<span id='username_check_msg'></span>
 								</div>
 								<div><input class='signup_input' placeholder='Password' name='password' type='password' required></div>
 								<div><input class='signup_input' placeholder='Re-enter Password' name='password_confirm' type='password' required></div>
 								<div>
 									<input class='signup_input' id='email_input' placeholder='Email' name='email' type='email' required>
-									<span><img class='loading_img' id='emailcheck_loading_img' src='<?=base_url()?>images/loading.gif'></span>
+									<span><img class='loading_img' id='emailcheck_loading_img' src='<?=base_url('images/loading.gif')?>'></span>
 									<span id='email_check_msg'></span>
 								</div>
 								<input type='hidden' name='from_type' value='signup'>
@@ -88,7 +88,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<br>Username and Email input are checking if there is a duplicate in db by <b>AJAX</b>.
 			<br>Password is checked by <b>Javascript validation function</b> to make sure that the user have a strong password.
 			<br>Passwords are stored in <b>salted hash-string</b> which is very secure from lots of cracking password tricks such as <a target="_blank" href='https://en.wikipedia.org/wiki/Rainbow_table'>rainbow table</a>.
-			<br>You may check more details from : <code><a target='_blank' href='https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php'>https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php</a></code></p>
+			<br>You may check more details from following code: 
+			<code><a target='_blank' href='https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php'>https://github.com/cbycdy/photofolio/blob/master/app/helpers/password_helper.php</a></code></p>
 		</div>
 	</div>
 </div>
@@ -101,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$('.loading_img').show();		
 		$.ajax({
           type : 'POST',
-          url : "<?=base_url()?>/user_access_control/username_check_ajax",
+          url : "<?=base_url('user_access_control/username_check_ajax')?>",
           dataType : 'json',
           data: {
             username: $('#username_input').val()
@@ -126,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$('#emailcheck_loading_img').show();		
 		$.ajax({
           type : 'POST',
-          url : "<?=base_url()?>/user_access_control/email_check_ajax",
+          url : "<?=base_url('user_access_control/email_check_ajax')?>",
           dataType : 'json',
           data: {
             email: $('#email_input').val()
