@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- Sign in -->
 					<li style="margin: auto;">
 						<strong>Sign in</strong>
-						<div class='signup_div'>
+						<div class='signin_div'>
 							<form class='signup_form' method='post' action='<?=base_url('user_access_control')?>'>
 								<?=$signin_msg?>
 								<div><input class='signup_input' id='username' placeholder='Username' name='username' type='text' required></div>
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		good_username = false;
 		$('.loading_img').show();		
 		$.ajax({
-          type : 'POST',
+          type : 'GET',
           url : "<?=base_url('user_access_control/username_check_ajax')?>",
           dataType : 'json',
           data: {
@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $('#username_check_msg').html(data.msg);
             if(data.result == 'success'){
             	good_username = true;
-            	console.log(data.result);
+            	console.log(data.result); 
             }
           },
           error : function(XMLHttpRequest, textStatus, errorThrown) { }
@@ -126,7 +126,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		good_email = false;
 		$('#emailcheck_loading_img').show();		
 		$.ajax({
-          type : 'POST',
+          type : 'GET',
           url : "<?=base_url('user_access_control/email_check_ajax')?>",
           dataType : 'json',
           data: {

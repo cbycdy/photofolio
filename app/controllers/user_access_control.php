@@ -78,10 +78,10 @@ class User_access_control extends CI_Controller {
 		$msg = $success_msg;
 		$data['result'] = 'success';
 
-		$post = $this->input->post();
+		$get = $this->input->get();
 
 		//error case:
-		if(!preg_match('/^[A-Za-z][A-Za-z0-9]{3,12}$/', $post['username']))
+		if(!preg_match('/^[A-Za-z][A-Za-z0-9]{3,12}$/', $get['username']))
 		{
 			$msg = $bad_username_msg;
 			$data['msg'] = $msg;
@@ -92,7 +92,7 @@ class User_access_control extends CI_Controller {
 
 		//check if the username is already used.
 		$this->load->model('user');
-		$user = $this->user->get_user_by_username($post['username']);
+		$user = $this->user->get_user_by_username($get['username']);
 
 		if($user)
 		{
@@ -114,11 +114,11 @@ class User_access_control extends CI_Controller {
 		$msg = $success_msg;
 		$data['result'] = 'success';
 
-		$post = $this->input->post();
+		$get = $this->input->get();
 
 		//check if the email is already used.
 		$this->load->model('user');
-		$user = $this->user->get_user_by_email($post['email']);
+		$user = $this->user->get_user_by_email($get['email']);
 
 		if($user)
 		{
